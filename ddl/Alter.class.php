@@ -44,7 +44,7 @@ class Alter implements IF_SQL_DDL_ALTER
 	 * @created  2019-04-09
 	 * @param   &IF_DATABASE $_DB
 	 */
-	public function __construct(IF_DATABASE & $_DB)
+	public function __construct( IF_DATABASE & $_DB=null )
 	{
 		//	...
 		$this->_DB = & $_DB;
