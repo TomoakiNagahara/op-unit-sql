@@ -2,11 +2,11 @@
 /**
  * unit-sql:/DDL.class.php
  *
- * @creation  2019-03-04
+ * @created   2019-03-04
  * @version   1.0
  * @package   unit-sql
- * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright Tomoaki Nagahara All right reserved.
+ * @author    Tomoaki Nagahara
+ * @copyright Tomoaki Nagahara All rights reserved.
  */
 
 /** namespace
@@ -20,6 +20,7 @@ namespace OP\UNIT\SQL;
  * @created   2019-03-04
  */
 use OP\OP_CORE;
+use OP\OP_CI;
 use OP\IF_DATABASE;
 use OP\IF_SQL_DDL;
 use OP\IF_SQL_DDL_DROP;
@@ -27,10 +28,6 @@ use OP\IF_SQL_DDL_DROP;
 /** DDL
  *
  * @creation  2018-04-20
- * @version   1.0
- * @package   unit-sql
- * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright Tomoaki Nagahara All right reserved.
  */
 class DDL implements IF_SQL_DDL
 {
@@ -38,6 +35,7 @@ class DDL implements IF_SQL_DDL
 	 *
 	 */
 	use OP_CORE;
+	use OP_CI;
 
 	/** IF_DATABASE
 	 *
