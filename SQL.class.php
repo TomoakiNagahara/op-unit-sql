@@ -1,45 +1,42 @@
 <?php
-/**
- * unit-sql:/Database.class.php
+/**	op-unit-sql:/Database.class.php
  *
  * @creation  2018-04-20
  * @version   1.0
- * @package   unit-sql
- * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright Tomoaki Nagahara All right reserved.
+ * @package   op-unit-sql
+ * @author    Tomoaki Nagahara
+ * @copyright Tomoaki Nagahara All rights reserved.
  */
 
-/** namespace
+/**	Namespace
  *
  * @created   2018-04-25
  */
 namespace OP\UNIT;
 
-/** Used class
+/**	Use
  *
  * @created   2019-03-04
  */
 use Exception;
+use OP\OP_CI;
 use OP\IF_UNIT;
 use OP\IF_SQL;
 use OP\IF_DATABASE;
 
-/** Database
+/**	Database
  *
- * @creation  2018-04-20
- * @version   1.0
- * @package   unit-sql
- * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright Tomoaki Nagahara All right reserved.
+ * @created   2018-04-20
  */
 class SQL implements IF_SQL, IF_UNIT
 {
-	/** trait
+	/**	trait
 	 *
 	 */
 	use \OP\OP_CORE, \OP\OP_UNIT;
+	use OP_CI;
 
-	/** Database
+	/**	Database
 	 *
 	 * @var \OP\UNIT\Database
 	 */
