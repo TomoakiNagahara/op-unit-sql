@@ -1,13 +1,12 @@
 <?php
-/**
- * unit-sql:/Grant.class.php
+/** op-unit-sql:/Grant.class.php
  *
  * @created   2017-12-19
  * @updated   2019-04-09
  * @version   1.0
- * @package   unit-sql
- * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright Tomoaki Nagahara All right reserved.
+ * @package   op-unit-sql
+ * @author    Tomoaki Nagahara
+ * @copyright Tomoaki Nagahara All rights reserved.
  */
 
 /** namespace
@@ -23,16 +22,13 @@ namespace OP\UNIT\SQL\DCL;
  */
 use Exception;
 use OP\OP_CORE;
+use OP\OP_CI;
 use OP\IF_DATABASE;
 use function OP\ifset;
 
 /** Grant
  *
  * @created   2017-12-19
- * @version   1.0
- * @package   unit-sql
- * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright Tomoaki Nagahara All right reserved.
  */
 class Grant
 {
@@ -40,6 +36,7 @@ class Grant
 	 *
 	 */
 	use OP_CORE;
+	use OP_CI;
 
 	/** Database
 	 *
