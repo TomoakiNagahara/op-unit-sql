@@ -1,20 +1,19 @@
 <?php
-/**
- * unit-sql:/Alter.class.php
+/**	op-unit-sql:/ddl/Alter.class.php
  *
  * @created   2019-01-18
  * @version   1.0
- * @package   unit-sql
- * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright Tomoaki Nagahara All right reserved.
+ * @package   op-unit-sql
+ * @author    Tomoaki Nagahara
+ * @copyright Tomoaki Nagahara All rights reserved.
  */
 
-/** namespace
+/**	Namespace
  *
  */
 namespace OP\UNIT\SQL\DDL;
 
-/** Used class
+/**	Use
  *
  * @created   2019-03-04
  */
@@ -22,13 +21,9 @@ use OP\OP_CORE;
 use OP\IF_DATABASE;
 use OP\IF_SQL_DDL_ALTER;
 
-/** Alter
+/**	Alter
  *
  * @created   2019-01-18
- * @version   1.0
- * @package   unit-sql
- * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright Tomoaki Nagahara All right reserved.
  */
 class Alter implements IF_SQL_DDL_ALTER
 {

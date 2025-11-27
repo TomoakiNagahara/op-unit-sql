@@ -1,23 +1,22 @@
 <?php
-/**
- * unit-sql:/ddl/Column.class.php
+/**	op-unit-sql:/ddl/Column.class.php
  *
  * @created   2017-12-01
- * @updated   2019-04-09  Correspond to IF.
+ * @updated   2019-04-09  Implement to IF
  * @version   1.0
- * @package   unit-sql
- * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright Tomoaki Nagahara All right reserved.
+ * @package   op-unit-sql
+ * @author    Tomoaki Nagahara
+ * @copyright Tomoaki Nagahara All rights reserved.
  */
 
-/** namespace
+/**	Namespace
  *
  * @created   2017-12-19  OP\UNIT\SQL
  * @updated   2019-04-09  OP\UNIT\SQL\DDL
  */
 namespace OP\UNIT\SQL\DDL;
 
-/** Used class
+/**	Use
  *
  * @created   2019-04-09
  */
@@ -26,13 +25,9 @@ use OP\OP_CORE;
 use OP\IF_DATABASE;
 use function OP\ifset;
 
-/** Column
+/**	Column
  *
  * @created   2017-12-01
- * @version   1.0
- * @package   unit-sql
- * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright Tomoaki Nagahara All right reserved.
  */
 class Column
 {

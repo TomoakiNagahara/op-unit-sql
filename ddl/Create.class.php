@@ -1,21 +1,20 @@
 <?php
-/**
- * unit-sql:/DDL/Create.class.php
+/**	op-unit-sql:/ddl/Create.class.php
  *
- * @created   2019-04-09  Correspond to IF.
+ * @created   2019-04-09  Implement to IF.
  * @version   1.0
- * @package   unit-sql
- * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright Tomoaki Nagahara All right reserved.
+ * @package   op-unit-sql
+ * @author    Tomoaki Nagahara
+ * @copyright Tomoaki Nagahara All rights reserved.
  */
 
-/** namespace
+/**	Namespace
  *
  * @created   2019-04-09  OP\UNIT\SQL\DDL
  */
 namespace OP\UNIT\SQL\DDL;
 
-/** Used class
+/**	Use
  *
  * @created   2019-04-09
  */
@@ -25,13 +24,9 @@ use OP\IF_DATABASE;
 use OP\IF_SQL_DDL_CREATE;
 use function OP\ifset;
 
-/** Create
+/**	Create
  *
  * @created   2019-04-09
- * @version   1.0
- * @package   unit-sql
- * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright Tomoaki Nagahara All right reserved.
  */
 class Create implements IF_SQL_DDL_CREATE
 {

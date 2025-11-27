@@ -1,21 +1,20 @@
 <?php
-/**
- * unit-sql:/DDL/Show.class.php
+/**	op-unit-sql:/ddl/Show.class.php
  *
- * @created   2019-04-08  Correspond to IF.
+ * @created   2019-04-08  Implement to IF.
  * @version   1.0
- * @package   unit-sql
- * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright Tomoaki Nagahara All right reserved.
+ * @package   op-unit-sql
+ * @author    Tomoaki Nagahara
+ * @copyright Tomoaki Nagahara All rights reserved.
  */
 
-/** namespace
+/**	Namespace
  *
  * @created   2019-04-08
  */
 namespace OP\UNIT\SQL\DDL;
 
-/** Used class
+/**	Use
  *
  * @created   2019-04-08
  */
@@ -24,13 +23,9 @@ use OP\OP_CORE;
 use OP\IF_DATABASE;
 use OP\IF_SQL_DDL_SHOW;
 
-/** Show
+/**	Show
  *
  * @created   2019-04-08
- * @version   1.0
- * @package   unit-sql
- * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright Tomoaki Nagahara All right reserved.
  */
 class Show implements IF_SQL_DDL_SHOW
 {
