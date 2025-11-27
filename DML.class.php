@@ -64,6 +64,11 @@ class DML implements IF_SQL_DML
 	public function Insert(array $config)
 	{
 		//	...
+		if(!$this->_DB ){
+			return;
+		}
+
+		//	...
 		include_once(__DIR__.'/dml/Insert.class.php');
 
 		//	...
@@ -78,6 +83,11 @@ class DML implements IF_SQL_DML
 	 */
 	public function Select(array $config)
 	{
+		//	...
+		if(!$this->_DB ){
+			return;
+		}
+
 		//	...
 		include_once(__DIR__.'/dml/Select.class.php');
 
@@ -94,6 +104,11 @@ class DML implements IF_SQL_DML
 	public function Update(array $config)
 	{
 		//	...
+		if(!$this->_DB ){
+			return;
+		}
+
+		//	...
 		include_once(__DIR__.'/dml/Update.class.php');
 
 		//	...
@@ -108,6 +123,11 @@ class DML implements IF_SQL_DML
 	 */
 	public function Delete(array $config)
 	{
+		//	...
+		if(!$this->_DB ){
+			return;
+		}
+
 		//	...
 		include_once(__DIR__.'/dml/Delete.class.php');
 
