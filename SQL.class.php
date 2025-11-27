@@ -65,8 +65,13 @@ class SQL implements IF_SQL, IF_UNIT
 	 * @creation  2019-04-09
 	 * @param    &IF_DATABASE
 	 */
-	public function DB( IF_DATABASE & $DB )
+	public function DB( IF_DATABASE & $DB=null )
 	{
+		//	...
+		if( empty($DB) ){
+			return;
+		}
+
 		//	...
 		if( $this->_DB ){
 			throw new Exception("Database object is already set.");
