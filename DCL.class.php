@@ -5,8 +5,8 @@
  * @created   2019-03-04
  * @version   1.0
  * @package   unit-sql
- * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright Tomoaki Nagahara All right reserved.
+ * @author    Tomoaki Nagahara
+ * @copyright Tomoaki Nagahara All rights reserved.
  */
 
 /** namespace
@@ -20,16 +20,13 @@ namespace OP\UNIT\SQL;
  * @created   2019-03-04
  */
 use OP\OP_CORE;
+use OP\OP_CI;
 use OP\IF_DATABASE;
 use OP\IF_SQL_DCL;
 
 /** DCL
  *
  * @created   2018-04-20
- * @version   1.0
- * @package   unit-sql
- * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright Tomoaki Nagahara All right reserved.
  */
 class DCL implements IF_SQL_DCL
 {
@@ -37,6 +34,7 @@ class DCL implements IF_SQL_DCL
 	 *
 	 */
 	use OP_CORE;
+	use OP_CI;
 
 	/** IF_DATABASE
 	 *
