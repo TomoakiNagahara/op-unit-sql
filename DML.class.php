@@ -100,18 +100,18 @@ class DML implements IF_SQL_DML
 	 * @param	 array		 $config
 	 * @return	 string		 $sql
 	 */
-	public function Update(array $config)
+	public function Update( array $config )
 	{
 		//	...
 		if(!$this->_DB ){
-			return;
+			$this->_DB = OP()->Unit()->Database();
 		}
 
 		//	...
 		include_once(__DIR__.'/dml/Update.class.php');
 
 		//	...
-		return DML\Update::SQL($config, $this->_DB);
+		return DML\Update::SQL( $config, $this->_DB );
 	}
 
 	/** Generate Delete SQL.
