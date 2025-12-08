@@ -1,20 +1,19 @@
 <?php
 /**	op-unit-sql:/DML.class.php
  *
- * @creation  2019-03-04
- * @version   1.0
- * @package   op-unit-sql
- * @author    Tomoaki Nagahara
- * @copyright Tomoaki Nagahara All rights reserved.
+ * @creation   2019-03-04
+ * @license    Apache-2.0
+ * @package    op-unit-sql
+ * @copyright  (C) 2019 Tomoaki Nagahara
  */
 
-/** namespace
+/**	Namespace
  *
  * @creation  2019-03-04
  */
 namespace OP\UNIT\SQL;
 
-/** Used class
+/**	Use
  *
  * @created   2019-03-04
  */
