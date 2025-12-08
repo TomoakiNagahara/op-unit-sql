@@ -29,19 +29,19 @@ use OP\IF_SQL_DDL_SHOW;
  */
 class Show implements IF_SQL_DDL_SHOW
 {
-	/** trait
+	/**	trait
 	 *
 	 */
 	use OP_CORE;
 
-	/** Database
+	/**	Database
 	 *
 	 * @creation  2019-04-09
 	 * @var      \OP\UNIT\Database
 	 */
 	private $_DB;
 
-	/** Construct.
+	/**	Construct.
 	 *
 	 * @created  2019-04-09
 	 * @param    IF_DATABASE $_DB
@@ -51,17 +51,21 @@ class Show implements IF_SQL_DDL_SHOW
 		$this->_DB = & $_DB;
 	}
 
-	/** Generate Show Database SQL.
+	/**	Generate Show Database SQL.
 	 *
-	 * @created  ????
-	 * @copied   2019-04-08
-	 * @param    array       $config
-	 * @return   string      $sql
+	 * {@inheritDoc}
+	 * @see \OP\IF_SQL_DDL_SHOW::Database()
+	 * @porting   2019-04-08
 	 */
-	public function Database(array $config=[])
+	public function Database( string $label='default' ) : string
 	{
 		//	...
-		switch( $prod = $this->_DB->Config()['prod'] ){
+		$db     = OP()->Unit()->Database();
+		$pdo    = $db->PDO($label);
+		$driver = $pdo->getAttribute(\PDO::ATTR_DRIVER_NAME);
+
+		//	...
+		switch( $driver ){
 			case 'mysql':
 				$sql = 'SHOW DATABASES';
 				break;
@@ -71,27 +75,28 @@ class Show implements IF_SQL_DDL_SHOW
 				break;
 
 			default:
-				throw new Exception("Has not been support this product. ($prod)");
+				throw new Exception("This driver is not yet supported: {$driver}");
 		};
 
 		//	...
 		return $sql;
 	}
 
-	/** Generate Show Table SQL.
+	/**	Generate Show Table SQL.
 	 *
-	 * @created  ????
-	 * @copied   2019-04-09
-	 * @param    array      $config
-	 * @return   string     $sql
+	 * {@inheritDoc}
+	 * @see \OP\IF_SQL_DDL_SHOW::Table()
+	 * @porting   2019-04-09
 	 */
-	public function Table(array $config=[])
+	public function Table( string $database='', string $label='default' ) : string
 	{
 		//	...
-		$database = $config['database'];
+		$db     = OP()->Unit()->Database();
+		$pdo    = $db->PDO($label);
+		$driver = $pdo->getAttribute(\PDO::ATTR_DRIVER_NAME);
 
 		//	...
-		switch( $prod = $this->_DB->Config()['prod'] ){
+		switch( $driver  ){
 			case 'mysql':
 				$database = $this->_DB->Quote($database);
 				$sql = "SHOW TABLES FROM {$database}";
@@ -106,25 +111,25 @@ class Show implements IF_SQL_DDL_SHOW
 				break;
 
 			default:
-				throw new Exception("Has not been support this product. ($prod)");
+				throw new Exception("This driver is not yet supported: {$driver}");
 		};
 
 		//	...
 		return $sql;
 	}
 
-	/** Generate Show Column SQL.
+	/**	Generate Show Column SQL.
 	 *
-	 * @created  ????
-	 * @copied   2019-04-09
-	 * @param    array      $config
-	 * @return   string     $sql
+	 * {@inheritDoc}
+	 * @see \OP\IF_SQL_DDL_SHOW::Column()
+	 * @porting   2019-04-09
 	 */
-	public function Column(array $config=[])
+	public function Column( string $table='', string $database='', string $label='default' ) : string
 	{
 		//	...
-		$database = $config['database'] ?? null;
-		$table    = $config['table']    ?? null;
+		$db     = OP()->Unit()->Database();
+		$pdo    = $db->PDO($label);
+		$driver = $pdo->getAttribute(\PDO::ATTR_DRIVER_NAME);
 
 		//	Loop at each key string.
 		foreach(['database','table'] as $key){
@@ -139,32 +144,32 @@ class Show implements IF_SQL_DDL_SHOW
 		};
 
 		//	Branch to each database.
-		switch( $prod = $this->_DB->Config()['prod'] ){
+		switch( $driver ){
 			case 'mysql':
-				$database = $this->_DB->Quote($database);
-				$table    = $this->_DB->Quote($table   );
+				$database = $db->Quote($database, $label);
+				$table    = $db->Quote($table   , $label);
 				$sql = "SHOW FULL COLUMNS FROM {$database}.{$table}";
 				break;
 
 			case 'pgsql':
-				$table    = $this->_DB->PDO()->quote($table);
+				$table    = $pdo->quote($table);
 				$sql = "SELECT * FROM information_schema.columns WHERE table_name = {$table}";
 				break;
 
 			case 'sqlite':
-				$table    = $this->_DB->Quote($table);
+				$table    = $db->Quote($table, $label);
 				$sql = "PRAGMA TABLE_INFO({$table})";
 				break;
 
 			default:
-				throw new Exception("This product has not been support. ($prod)");
+				throw new Exception("This driver is not yet supported: {$driver}");
 		};
 
 		//	...
 		return $sql;
 	}
 
-	/** Generate Show Index SQL.
+	/**	Generate Show Index SQL.
 	 *
 	 * @created  ????
 	 * @copied   2019-04-09
@@ -196,7 +201,7 @@ class Show implements IF_SQL_DDL_SHOW
 		};
 	}
 
-	/** Generate Show Variables SQL.
+	/**	Generate Show Variables SQL.
 	 *
 	 * @creation 2019-01-08
 	 * @param    array      $config
@@ -207,7 +212,7 @@ class Show implements IF_SQL_DDL_SHOW
 
 	}
 
-	/** Generate Show Status SQL.
+	/**	Generate Show Status SQL.
 	 *
 	 * @creation 2019-01-08
 	 * @param    array      $config
@@ -218,7 +223,7 @@ class Show implements IF_SQL_DDL_SHOW
 
 	}
 
-	/** Generate Show Grants SQL.
+	/**	Generate Show Grants SQL.
 	 *
 	 * @creation 2019-01-08
 	 * @param    array      $config
@@ -231,7 +236,7 @@ class Show implements IF_SQL_DDL_SHOW
 		return "SHOW GRANTS FOR {$user}@{$host}";
 	}
 
-	/** Generate Show User SQL.
+	/**	Generate Show User SQL.
 	 *
 	 * @creation  ????
 	 * @updation  2019-04-09
@@ -279,7 +284,7 @@ class Show implements IF_SQL_DDL_SHOW
 		return $sql;
 	}
 
-	/** Generate Show Password SQL.
+	/**	Generate Show Password SQL.
 	 *
 	 * @created   ????-??-??  OP\UNIT\SQL\Select
 	 * @updated   2019-04-09  OP\UNIT\SQL\DDL\Show
