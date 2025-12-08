@@ -1,11 +1,10 @@
 <?php
 /** op-unit-sql:/dml/function/Pager.php
  *
- * @creation  2020-06-06
- * @version   1.0
- * @package   op-unit-sql
- * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright Tomoaki Nagahara All right reserved.
+ * @creation   2020-06-06
+ * @license    Apache-2.0
+ * @package    op-unit-sql
+ * @copyright  (C) 2020 Tomoaki Nagahara
  */
 
 /** namespace

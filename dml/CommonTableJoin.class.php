@@ -2,11 +2,10 @@
 /**
  * unit-sql:/DML/CommonTableJoin.class.php
  *
- * @creation  2019-03-05
- * @version   1.0
- * @package   unit-sql
- * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright Tomoaki Nagahara All right reserved.
+ * @creation   2019-03-05
+ * @license    Apache-2.0
+ * @package    op-unit-sql
+ * @copyright  (C) 2019 Tomoaki Nagahara
  */
 
 /** namespace
@@ -23,11 +22,6 @@ use OP\OP_CORE;
 
 /** Database
  *
- * @creation  2018-04-20
- * @version   1.0
- * @package   unit-sql
- * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright Tomoaki Nagahara All right reserved.
  */
 class Common
 {

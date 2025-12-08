@@ -2,11 +2,10 @@
 /**
  * unit-sql:/DML/Delete.class.php
  *
- * @creation  2019-03-04
- * @version   1.0
- * @package   unit-sql
- * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright Tomoaki Nagahara All right reserved.
+ * @created    2019-03-04
+ * @license    Apache-2.0
+ * @package    op-unit-sql
+ * @copyright  (C) 2019 Tomoaki Nagahara
  */
 
 /** namespace
@@ -25,11 +24,6 @@ use OP\IF_DATABASE;
 
 /** Delete
  *
- * @creation  2018-04-20
- * @version   1.0
- * @package   unit-sql
- * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright Tomoaki Nagahara All right reserved.
  */
 class Delete
 {
@@ -48,7 +42,8 @@ class Delete
 		//	...
 		foreach( ['table','where','limit'] as $key ){
 			if(!isset($config[$key]) ){
-				throw new Exception("Has not been set \"{$key}\".");
+				OP()->Error("This value has not been set: {$key}");
+				return;
 			};
 		};
 
@@ -67,7 +62,7 @@ class Delete
 		};
 
 		//	...
-		if( 'mysql' === ($prod = $_DB->Config()['prod']) ){
+		if( 'mysql' === ($prod = $_DB->Config()['scheme']) ){
 			//	LIMIT
 			$limit = Common::Limit($config['limit'], $_DB);
 

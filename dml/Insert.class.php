@@ -2,11 +2,10 @@
 /**
  * unit-sql:/DML/Insert.class.php
  *
- * @creation  2019-03-04
- * @version   1.0
- * @package   unit-sql
- * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright Tomoaki Nagahara All right reserved.
+ * @created    2019-03-04
+ * @license    Apache-2.0
+ * @package    op-unit-sql
+ * @copyright  (C) 2019 Tomoaki Nagahara
  */
 
 /** namespace
@@ -25,11 +24,6 @@ use OP\IF_DATABASE;
 
 /** Insert
  *
- * @creation  2018-04-20
- * @version   1.0
- * @package   unit-sql
- * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright Tomoaki Nagahara All right reserved.
  */
 class Insert
 {
@@ -47,11 +41,11 @@ class Insert
 	{
 		//	...
 		if(!isset($config['table']) ){
-			throw new Exception("Has not been set table name.");
+			throw new Exception("A table name has not been set.");
 		};
 
 		//	...
-		switch( $_DB->Config()['prod'] ){
+		switch( $_DB->Config()['driver'] ){
 			case 'mysql':
 				return self::_MySQL($config, $_DB);
 
@@ -100,7 +94,7 @@ class Insert
 
 	static private function _Other(array $config, IF_DATABASE $_DB)
 	{
-
+		throw new Exception("Current driver has not been support.");
 	}
 
 	static private function _Update(array $config, IF_DATABASE $_DB)
