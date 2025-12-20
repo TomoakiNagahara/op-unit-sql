@@ -45,7 +45,7 @@ class DML implements IF_SQL_DML
 	 * @creation 2019-01-08
 	 * @param    IF_DATABASE $_DB
 	 */
-	public function __construct( IF_DATABASE & $_DB=null )
+	public function __construct( ?IF_DATABASE & $_DB=null )
 	{
 		//	...
 		include_once(__DIR__.'/dml/Common.class.php');
