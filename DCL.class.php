@@ -47,7 +47,7 @@ class DCL implements IF_SQL_DCL
 	 * @created  2019-01-08
 	 * @param    IF_DATABASE $_DB
 	 */
-	public function __construct( IF_DATABASE & $_DB=null )
+	public function __construct( ?IF_DATABASE & $_DB=null )
 	{
 		$this->_DB = & $_DB;
 	}
