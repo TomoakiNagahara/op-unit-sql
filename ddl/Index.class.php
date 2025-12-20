@@ -48,7 +48,7 @@ class Index
 	 * @created   2019-04-15
 	 * @param   &IF_DATABASE $_DB
 	 */
-	public function __construct( IF_DATABASE & $_DB=null )
+	public function __construct( ?IF_DATABASE & $_DB=null )
 	{
 		//	...
 		$this->_DB = & $_DB;
