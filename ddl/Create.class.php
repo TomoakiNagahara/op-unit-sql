@@ -38,7 +38,7 @@ class Create implements IF_SQL_DDL_CREATE
 	/** Database
 	 *
 	 * @creation  2019-04-09
-	 * @var      \OP\UNIT\Database
+	 * @var      \OP\IF_DATABASE
 	 */
 	private $_DB;
 

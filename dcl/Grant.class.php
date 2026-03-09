@@ -41,7 +41,7 @@ class Grant
 	/** Database
 	 *
 	 * @creation  2019-04-09
-	 * @var      \OP\UNIT\Database
+	 * @var      \OP\IF_DATABASE
 	 */
 	private $_DB;
 

@@ -39,7 +39,7 @@ class Index
 	/** Database
 	 *
 	 * @created   2019-04-15
-	 * @var      \OP\UNIT\Database
+	 * @var      \OP\IF_DATABASE
 	 */
 	private $_DB;
 

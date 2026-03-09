@@ -38,7 +38,7 @@ class SQL implements IF_SQL, IF_UNIT
 
 	/**	Database
 	 *
-	 * @var \OP\UNIT\Database
+	 * @var \OP\IF_DATABASE
 	 */
 	private $_DB;
 
